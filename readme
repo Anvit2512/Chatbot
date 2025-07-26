@@ -1,0 +1,94 @@
+Advanced RAG Q&A Chatbot
+This project implements an advanced Retrieval-Augmented Generation (RAG) chatbot featuring a persistent knowledge base, conversational memory, and an interactive web interface.
+The application allows you to upload your own text documents, processes them into a searchable knowledge base, and then lets you "chat" with your documents. The chatbot remembers the context of your conversation, allowing for natural follow-up questions.
+(A sample screenshot showing the UI in action)
+✨ Features
+Interactive Web UI: Built with Streamlit for a user-friendly chat experience.
+Upload Your Own Data: Supports uploading multiple .txt files to create a custom knowledge base.
+Persistent Knowledge Base: Uses ChromaDB to save the document embeddings to disk, so you only need to process your documents once.
+Conversational Memory: Remembers previous turns in the conversation, allowing for follow-up questions and more natural interaction (using ConversationalRetrievalChain).
+100% Local and Private: Runs entirely on your local machine using a lightweight, open-source Hugging Face model (google/flan-t5-base). No API keys or internet connection required after initial model download.
+⚙️ How It Works (Architecture)
+The chatbot uses a RAG pipeline orchestrated by the LangChain framework.
+Indexing Phase (One-time, on "Process Documents")
+Load: Text documents are loaded from the user upload.
+Chunk: Documents are split into smaller, manageable chunks.
+Embed: Each chunk is converted into a numerical vector (embedding) using a sentence-transformer model.
+Store: The chunks and their embeddings are stored in a ChromaDB vector database on your local disk.
+Generated code
+Your Documents (.txt) -> Chunks -> Embeddings -> ChromaDB (on disk)
+Use code with caution.
+Chat Phase (Real-time)
+User Input: The user asks a question in the chat interface.
+Memory: The chain combines the new question with the past chat history to create a standalone question.
+Retrieve: The system searches the ChromaDB to find the most relevant chunks of text from the source documents.
+Generate: The retrieved chunks, along with the question, are passed to the local LLM, which generates a fact-based, conversational answer.
+Generated code
+(User Question + Chat History) -> Retriever -> (Relevant Chunks + Question) -> LLM -> Answer
+Use code with caution.
+🚀 Getting Started
+Follow these instructions to set up and run the project on your local machine.
+Prerequisites
+Python 3.8 or higher
+Git
+1. Clone the Repository
+Generated bash
+git clone https://github.com/your-username/rag_chatbot_pro.git
+cd rag_chatbot_pro
+Use code with caution.
+Bash
+(Replace your-username with your actual GitHub username if you've forked it)
+2. Create a requirements.txt file
+Create a file named requirements.txt in the project directory and paste the following content into it:
+Generated code
+langchain
+streamlit
+pypdf
+sentence-transformers
+torch
+transformers
+chromadb
+Use code with caution.
+3. Set Up a Virtual Environment and Install Dependencies
+It is highly recommended to use a virtual environment to manage project dependencies.
+Generated bash
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install the required packages
+pip install -r requirements.txt
+Use code with caution.
+Bash
+4. Run the Application
+Once the installation is complete, you can run the Streamlit app:
+Generated bash
+streamlit run app.py
+Use code with caution.
+Bash
+Your web browser should automatically open to the application's URL (usually http://localhost:8501).
+5. Using the Chatbot
+Upload Documents: In the sidebar, use the file uploader to select one or more .txt files from your computer.
+Process Documents: Click the "Process Documents" button. You will see a spinner while the app indexes your files. This might take a moment, especially the first time when the models are downloaded.
+Start Chatting: Once processing is complete, the chat interface will be ready. Type your questions and get answers based on your documents!
+📂 Project Structure
+Generated code
+rag_chatbot_pro/
+├── app.py              # The main Streamlit application script
+├── product_manual.txt  # Example source document 1
+├── company_info.txt    # Example source document 2
+├── requirements.txt    # Python dependencies
+├── chroma_db/          # Folder for the persistent vector database (created automatically on first run)
+└── README.md           # This file
+Use code with caution.
+🔧 Customization and Next Steps
+Change the LLM: To use a different model from Hugging Face, change the MODEL_ID_LLM constant in app.py. For larger models like Mistral, you will likely need a GPU.
+Support More File Types: Extend the load_and_process_documents function in app.py. You can use other LangChain DocumentLoaders (like PyPDFLoader for PDFs) to handle different file formats. You will need to install additional packages (e.g., pip install pypdf).
+Deploy the App: You can deploy your Streamlit application using services like Streamlit Community Cloud, Hugging Face Spaces, or your own server.
+📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.

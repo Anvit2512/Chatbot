@@ -1,0 +1,21 @@
+# AquaBot X1000 Product Manual
+
+## Section 1: Introduction
+Welcome to the AquaBot X1000, your personal automated hydration assistant. The AquaBot is designed to ensure you stay hydrated by intelligently monitoring your water intake and reminding you to drink. It features a sleek design, long-lasting battery, and smart-sync technology.
+
+## Section 2: Getting Started
+1. Unbox your AquaBot X1000.
+2. Charge the device using the provided USB-C cable. A full charge takes approximately 2 hours. The indicator light will turn solid green when fully charged.
+3. Download the HydroSync app from the App Store or Google Play.
+4. Pair your AquaBot with your phone via Bluetooth.
+
+## Section 3: Maintenance and Care
+- To clean the AquaBot, hand-wash the bottle with warm, soapy water. The electronic base is water-resistant but not dishwasher safe. Do not submerge the base.
+- The battery is designed to last for 7 days on a single charge with typical usage.
+- For technical support, please contact support@aquabot-innovations.com.
+
+## Section 4: Troubleshooting
+- **Problem:** AquaBot not syncing with the app.
+  **Solution:** Ensure Bluetooth is enabled on your phone and the AquaBot is within 10 meters. Try restarting both the app and your AquaBot.
+- **Problem:** Indicator light is flashing red.
+  **Solution:** The battery is low. Please charge the device using the USB-C cable.
