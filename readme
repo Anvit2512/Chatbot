@@ -1,7 +1,7 @@
 Advanced RAG Q&A Chatbot
 This project implements an advanced Retrieval-Augmented Generation (RAG) chatbot featuring a persistent knowledge base, conversational memory, and an interactive web interface.
 The application allows you to upload your own text documents, processes them into a searchable knowledge base, and then lets you "chat" with your documents. The chatbot remembers the context of your conversation, allowing for natural follow-up questions.
-![App Screenshot](assets/screenshot.png)
+![App Screenshot](screenshot.png)
 ✨ Features
 Interactive Web UI: Built with Streamlit for a user-friendly chat experience.
 Upload Your Own Data: Supports uploading multiple .txt files to create a custom knowledge base.
